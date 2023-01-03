@@ -1,38 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@400;700&family=Dancing+Script:wght@400;700&display=swap');
+
+:root {
+  --first-color: #8BC6EC;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Balsamiq Sans', cursive;
+  /* font-family: 'Dancing Script', cursive; */
+}
+
 .App {
-  text-align: center;
+  background-color: var(--first-color);
+  background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+a {
+  text-decoration: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+ul,
+li {
+  list-style-type: none;
 }
 
-.App-header {
-  background-color: #282c34;
+.row {
+  margin: 0;
+  padding: 0;
+}
+
+/* scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px gray; 
+  background-color: var(--first-color);
+  border-radius: 10px;
+}
+ 
+::-webkit-scrollbar-thumb {
+  background-image: 
+  radial-gradient( circle farthest-corner at 92.3% 71.5%,  rgba(83,138,214,1) 0%, rgba(134,231,214,1) 90% ); 
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-image: linear-gradient( 179.4deg,  rgba(33,150,243,1) 1.8%, rgba(22,255,245,0.60) 97.1% );}
+
+.App {
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}

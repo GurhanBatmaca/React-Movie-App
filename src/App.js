@@ -3,6 +3,9 @@ import './App.css';
 import { MovieProvider } from "./context/MovieContext";
 
 import Navbar from "./components/Navbar";
+import Header from "./components/Header/Header";
+import Movie from "./components/movie/Movie";
+
 
 function App() {
   return (
@@ -11,9 +14,10 @@ function App() {
       <MovieProvider>
 
         <Navbar />
-        <h1>aaa</h1>
-        <Routes>
 
+        <Routes>
+          <Route path={"/"} element={<Header />} />
+          <Route path={`/movie/:id`} element={<Movie/>}/>
         </Routes>
 
       </MovieProvider>
