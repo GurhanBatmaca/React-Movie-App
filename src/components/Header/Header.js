@@ -39,7 +39,7 @@ const Header = () => {
                         <div className={`card-body ${styles.my_card_body}  ${styles.text_color}`}>
                             <h5 className="card-title">{movie.title}</h5>
                             <p className={`card-text ${styles.line_clamp}`}>{movie.overview}</p>
-                            <p className={`card-text`}>Devamı..</p>
+                            <p className={`card-text`}>Detail..</p>
                             <p className="card-text">Rating: {movie.vote_average}</p>
                         </div>
                     </NavLink>
@@ -54,11 +54,11 @@ const Header = () => {
           <div className={`text-center {styles.pages}`}>{`< ${movies.length} / ${page} >`}</div>
           <div className={`text-center`}>        
             <button 
-              onClick={() => {onChangePage("-")}} className={page > 1 ? "btn m-2 bg-warning" : "btn m-2 bg-dark"}>
+              onClick={() => {onChangePage("-")}} className={page > 1 ? "btn m-2 bg-warning" : "btn m-2 bg-dark disabled"}>
               PREV
             </button>
             <button 
-              onClick={() => {onChangePage("+")}} className={movies.length === page ? "btn m-2 bg-dark" : "btn m-2 bg-warning"}>
+              onClick={() => {onChangePage("+")}} className={movies.length === page ? "btn m-2 bg-dark disabled" : "btn m-2 bg-warning"}>
               NEXT
             </button>  
         </div>
