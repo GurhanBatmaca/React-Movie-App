@@ -1,6 +1,6 @@
 # React Movie App || wiht TMDB api
 
-[Demo]()  
+[Demo](https://react-movies-shows-app.netlify.app/)  
 
 **Used:**
 
