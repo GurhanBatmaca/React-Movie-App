@@ -69,7 +69,7 @@ const Navbar = () => {
             </li>
             <li className="nav-item dropdown">
               <a disabled className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Tv Shows
+                Tv Shows(soon)
               </a>
               <ul className="dropdown-menu">
                 <li><NavLink className="dropdown-item" to={"/"}>Action</NavLink></li>
