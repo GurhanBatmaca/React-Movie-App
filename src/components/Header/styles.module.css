@@ -11,7 +11,13 @@ header {
     border: 1px solid #1A0000;
     border-radius: 7px;
     margin-bottom: 1rem;
+    transition: all .7s ease;
+}
 
+.my_card_link:hover {
+    transform: scale(1.1);
+    z-index: 1000;
+    background-color: var(--first-color); 
 }
 
 .my_card_link img {
