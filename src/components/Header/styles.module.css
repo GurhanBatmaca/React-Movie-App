@@ -1,3 +1,56 @@
 header {
     padding-top: 70px;
 }
+
+.my_card {
+    background-color: inherit;
+    border: none;
+}
+
+.my_card_link {
+    border: 1px solid #1A0000;
+    border-radius: 7px;
+    margin-bottom: 1rem;
+
+}
+
+.my_card_link img {
+    height: 40rem;
+}
+
+.my_card_link .my_card_body {
+    height: 18rem;
+    font-size: 1rem;
+}
+
+.my_card_link .line_clamp {
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.my_card_link .text_color {
+    color: #1A0000;
+}
+
+.my_card_link .raiting {
+    background-color: #58287F;
+    padding: .3rem;
+    border-radius: 50%;
+}
+
+.my_card_link .my_card_title {
+    font-size: 1.4rem;
+}
+
+.pages {
+    font-size: 1.25rem;
+    color: #58287F;
+}
+
+@media (max-width: 560px) {
+    .my_card {
+        padding: 0;
+    }
+}

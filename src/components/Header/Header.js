@@ -30,17 +30,16 @@ const Header = () => {
     <header className="container">  
         <h2 className="text-center py-2">{activePage}</h2>  
         <ul className="row">
-
         {
             movies.map((movie) => (
                 <li key={movie.id} className={`card col-lg-4 col-md-6 ${styles.my_card}`}>
-                    <NavLink to={`/movie/${movie.id}`} >
+                    <NavLink to={`/movie/${movie.id}`} className={`${styles.my_card_link}`} >
                         <img src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} className="card-img-top" alt={`${movie.title} poster`}/>
                         <div className={`card-body ${styles.my_card_body}  ${styles.text_color}`}>
-                            <h5 className="card-title">{movie.title}</h5>
+                            <h5 className={`card-title ${styles.my_card_title}`}>{movie.title}</h5>
                             <p className={`card-text ${styles.line_clamp}`}>{movie.overview}</p>
-                            <p className={`card-text`}>Detail..</p>
-                            <p className="card-text">Rating: {movie.vote_average}</p>
+                            <p className={`card-text`}><span className="me-2">Detail..</span><i className="fa-solid fa-location-arrow"></i></p>
+                            <p className="card-text">Rating: <span className={`${styles.raiting}`}>{movie.vote_average}</span></p>
                         </div>
                     </NavLink>
                 </li>
@@ -51,14 +50,14 @@ const Header = () => {
         {
         movies.length > 0 && 
         <div className="p-3 ">
-          <div className={`text-center {styles.pages}`}>{`< ${movies.length} / ${page} >`}</div>
+          <div className={`text-center ${styles.pages}`}>{`< ${movies.length} / ${page} >`}</div>
           <div className={`text-center`}>        
             <button 
-              onClick={() => {onChangePage("-")}} className={page > 1 ? "btn m-2 bg-warning" : "btn m-2 bg-dark disabled"}>
+              onClick={() => {onChangePage("-")}} className={page > 1 ? "btn m-2 bg-info" : "btn m-2 bg-info disabled "}>
               PREV
             </button>
             <button 
-              onClick={() => {onChangePage("+")}} className={movies.length === page ? "btn m-2 bg-dark disabled" : "btn m-2 bg-warning"}>
+              onClick={() => {onChangePage("+")}} className={movies.length === page ? "btn m-2 bg-info disabled" : "btn m-2 bg-info"}>
               NEXT
             </button>  
         </div>
