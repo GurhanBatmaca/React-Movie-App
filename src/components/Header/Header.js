@@ -52,7 +52,7 @@ const Header = () => {
         {
         movies.length > 0 && 
         <div className="p-3 ">
-          <div className={`text-center ${styles.pages}`}><i className="fa-solid fa-quote-left fa-2xs"></i>{` ${movies.length} / ${page} `}<i class="fa-solid fa-quote-right fa-2xs"></i></div>
+          <div className={`text-center ${styles.pages}`}><i className="fa-solid fa-quote-left fa-2xs"></i>{` ${movies.length} / ${page} `}<i className="fa-solid fa-quote-right fa-2xs"></i></div>
           <div className={`text-center`}>        
             <button 
               onClick={() => {onChangePage("-")}} className={page > 1 ? "btn m-2 bg-info" : "btn m-2 bg-info disabled "}>
