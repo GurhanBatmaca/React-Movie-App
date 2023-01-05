@@ -6,7 +6,7 @@ import styles from './styles.module.css';
 
 const Header = () => {
 
-  const {movies, setMovies,mainURL,page,setPage,activePage} 
+  const {movies, setMovies,mainURL,page,setPage,activePage,isLoading,setIsLoading} 
   = useContext(MovieContext);
 
   const onChangePage = (e) => {
@@ -22,6 +22,7 @@ const Header = () => {
       .then(res => res.json())
       .then((data) => {
         setMovies(data.results);
+        setIsLoading(false);
       })
   }, [page,mainURL]);
 
@@ -29,8 +30,9 @@ const Header = () => {
   return (
     <header className="container">  
         <h2 className="text-center py-2">{activePage}</h2>  
+        { isLoading && <h2 className="text-center p-3"><i className="fa-solid fa-spinner"></i>  Loading...</h2> }
         <ul className="row">
-        {
+        { 
             movies.map((movie) => (
                 <li key={movie.id} className={`card col-lg-4 col-md-6 ${styles.my_card}`}>
                     <NavLink to={`/movie/${movie.id}`} className={`${styles.my_card_link}`} >
@@ -50,15 +52,15 @@ const Header = () => {
         {
         movies.length > 0 && 
         <div className="p-3 ">
-          <div className={`text-center ${styles.pages}`}>{`< ${movies.length} / ${page} >`}</div>
+          <div className={`text-center ${styles.pages}`}><i className="fa-solid fa-quote-left fa-2xs"></i>{` ${movies.length} / ${page} `}<i class="fa-solid fa-quote-right fa-2xs"></i></div>
           <div className={`text-center`}>        
             <button 
               onClick={() => {onChangePage("-")}} className={page > 1 ? "btn m-2 bg-info" : "btn m-2 bg-info disabled "}>
-              PREV
+              <i className="fa-solid fa-caret-left"></i> PREV
             </button>
             <button 
               onClick={() => {onChangePage("+")}} className={movies.length === page ? "btn m-2 bg-info disabled" : "btn m-2 bg-info"}>
-              NEXT
+              NEXT <i className="fa-solid fa-caret-right"></i>
             </button>  
         </div>
       </div>

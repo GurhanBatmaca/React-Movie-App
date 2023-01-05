@@ -11,6 +11,7 @@ export const MovieProvider = ({children}) => {
     const [mainURL, setMainURL] = useState(`https://api.themoviedb.org/3/movie/now_playing?api_key=ad9a7b0c1f07914b7f151c86d435af36&language=en-US&page=`)
     // const [fullURL, setFullURL] = useState(`${mainURL}${page}`);
     const [activePage, setActivePage] = useState("NOW PLAYİNG MOVİES");
+    const [isLoading, setIsLoading] = useState(true);
 
     const values = {
         search, setSearch,
@@ -19,7 +20,8 @@ export const MovieProvider = ({children}) => {
         page, setPage,
         mainURL, setMainURL,
         // fullURL, setFullURL,
-        activePage, setActivePage
+        activePage, setActivePage,
+        isLoading, setIsLoading
     }
 
     return <MovieContext.Provider value={values}>
