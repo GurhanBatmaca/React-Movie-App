@@ -13,7 +13,6 @@ const Movie = () => {
             .then(res => res.json())
             .then((data) => {
                 setMovie(data);
-                console.log(data)
             })          
     },[id]);
 

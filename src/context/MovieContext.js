@@ -8,18 +8,27 @@ export const MovieProvider = ({children}) => {
     const [movie ,setMovie] = useState({});
     const [search, setSearch] = useState("");
     const [page, setPage] = useState(1);
-    const [mainURL, setMainURL] = useState(`https://api.themoviedb.org/3/movie/now_playing?api_key=ad9a7b0c1f07914b7f151c86d435af36&language=en-US&page=`)
-    // const [fullURL, setFullURL] = useState(`${mainURL}${page}`);
+    // const [lang, setLang] = useState("en-US");
+    const [mainURL, setMainURL] = 
+    useState(`https://api.themoviedb.org/3/movie/now_playing?api_key=ad9a7b0c1f07914b7f151c86d435af36&language=en-US&page=`)
     const [activePage, setActivePage] = useState("NOW PLAYİNG MOVİES");
     const [isLoading, setIsLoading] = useState(true);
+    // en-US
+
+    //1- mainUrl = https://api.themoviedb.org/3/  sabit
+    //2- section = movie/now_playing? or movie/popular? or movie/top_rated? or movie/upcoming?
+    //2- section = search/multi?
+    //3- api_key=ad9a7b0c1f07914b7f151c86d435af36&language= en-US or tr
+    //4- arama varsa 
+
 
     const values = {
         search, setSearch,
         movies, setMovies,
         movie ,setMovie,
         page, setPage,
+        // lang, setLang,
         mainURL, setMainURL,
-        // fullURL, setFullURL,
         activePage, setActivePage,
         isLoading, setIsLoading
     }

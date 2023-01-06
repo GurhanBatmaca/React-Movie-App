@@ -1,11 +1,11 @@
 import { NavLink, useNavigate } from "react-router-dom"; 
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 
 import MovieContext from "../context/MovieContext";
 
 const Navbar = () => {
 
-  const {search,setSearch,setMainURL,setPage,setActivePage} = useContext(MovieContext);
+  const {search,setSearch,setMainURL,setPage,setActivePage,lang} = useContext(MovieContext);
 
   const navigate = useNavigate();
 
@@ -28,20 +28,37 @@ const Navbar = () => {
       setPage(1);
       setMainURL(`https://api.themoviedb.org/3/movie/now_playing?api_key=ad9a7b0c1f07914b7f151c86d435af36&language=en-US&page=`);  
       setActivePage("NOW PLAYİNG MOVİES");  
+      navigate("/");
     } else if ( e === 2) {
       setPage(1);
       setMainURL(`https://api.themoviedb.org/3/movie/popular?api_key=ad9a7b0c1f07914b7f151c86d435af36&language=en-US&page=`);
       setActivePage("POPULAR MOVIES MOVİES");  
+      navigate("/");
     } else if ( e === 3) {
       setPage(1);
       setMainURL(`https://api.themoviedb.org/3/movie/top_rated?api_key=ad9a7b0c1f07914b7f151c86d435af36&language=en-US&page=`);
       setActivePage("TOP RATED MOVİES"); 
+      navigate("/");
+
     } else  {
       setPage(1);
       setMainURL(`https://api.themoviedb.org/3/movie/upcoming?api_key=ad9a7b0c1f07914b7f151c86d435af36&language=en-US&page=`);
       setActivePage("UP COMİNG MOVİES"); 
-    }   
+      navigate("/");
+    }  
   };
+
+    // const changeLang = (e) => {
+    //   if(e === 1) {
+    //     setLang("en-US");      
+    //     console.log(lang)
+
+    //   } else {
+    //     setLang("tr")
+    //     console.log(lang)
+    //   }  
+    // }
+
 
   return (
     <nav className="navbar navbar-expand-lg fixed-top container py-3">
@@ -52,9 +69,6 @@ const Navbar = () => {
         </button>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-            {/* <li className="nav-item">
-              <NavLink className="nav-link active" to={"/"}>Home</NavLink>
-            </li> */}
             <li className="nav-item">
               <button onClick={()=> {onMovieChange(1)}} className="nav-link btn btn-outline">NOW PLAYİNG</button>
             </li>
@@ -81,7 +95,7 @@ const Navbar = () => {
           </ul>
           <div className="dropdown pe-2">
             <button className="btn btn-outline dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Language <i className="fa-solid fa-globe"></i>
+              Language ( {lang} )<i className="fa-solid fa-globe"></i>
             </button>
             <ul className="dropdown-menu">
               <li><button className="dropdown-item" type="button">English</button></li>

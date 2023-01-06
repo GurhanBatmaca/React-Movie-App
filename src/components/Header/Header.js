@@ -24,6 +24,7 @@ const Header = () => {
         setMovies(data.results);
         setIsLoading(false);
       })
+      console.log(mainURL);
   }, [page,mainURL]);
 
 
