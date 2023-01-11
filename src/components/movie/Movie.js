@@ -1,7 +1,6 @@
 import {useState, useEffect, useContext} from 'react';
 import { useParams } from 'react-router-dom';
 import MovieContext from "../../context/MovieContext";
-// import styles from './styles.module.css';
 
 const Movie = () => {
 

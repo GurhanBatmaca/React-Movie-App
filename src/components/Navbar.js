@@ -1,5 +1,5 @@
 import { NavLink, useNavigate } from "react-router-dom"; 
-import { useState, useContext, useEffect } from "react";
+import {  useContext } from "react";
 
 import MovieContext from "../context/MovieContext";
 
@@ -47,18 +47,6 @@ const Navbar = () => {
       navigate("/");
     }  
   };
-
-    // const changeLang = (e) => {
-    //   if(e === 1) {
-    //     setLang("en-US");      
-    //     console.log(lang)
-
-    //   } else {
-    //     setLang("tr")
-    //     console.log(lang)
-    //   }  
-    // }
-
 
   return (
     <nav className="navbar navbar-expand-lg fixed-top container py-3">

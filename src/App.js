@@ -12,14 +12,11 @@ function App() {
     <div className="App">
 
       <MovieProvider>
-
         <Navbar />
-
         <Routes>
           <Route path={"/"} element={<Header />} />
           <Route path={`/movie/:id`} element={<Movie/>}/>
         </Routes>
-
       </MovieProvider>
 
     </div>
