@@ -81,7 +81,7 @@ const Navbar = () => {
               </ul>
             </li>
           </ul>
-          <div className="dropdown pe-2">
+          {/* <div className="dropdown pe-2">
             <button className="btn btn-outline dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
               Language ( {lang} )<i className="fa-solid fa-globe"></i>
             </button>
@@ -90,7 +90,7 @@ const Navbar = () => {
               <li><button className="dropdown-item" type="button">Türkçe</button></li>
 
             </ul>
-        </div>
+        </div> */}
           <form onSubmit={onSubmitForm} className="d-flex" role="search">
             <input
               onChange={onChangeInput} value={search}
