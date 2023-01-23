@@ -1,8 +1,15 @@
-import { createContext, useState } from "react";
+import { createContext, useReducer, useState } from "react";
+import { ReduserFn } from "./ReduserFn";
 
 const MovieContext = createContext();
 
 export const MovieProvider = ({children}) => {
+
+    const initinalState = {
+        testRedus: "olumlu"
+    }
+
+    const [state, dispatct] = useReducer(ReduserFn,initinalState);
 
     const [movies, setMovies] = useState([]);
     const [movie ,setMovie] = useState({});
@@ -21,7 +28,8 @@ export const MovieProvider = ({children}) => {
         // lang, setLang,
         mainURL, setMainURL,
         activePage, setActivePage,
-        isLoading, setIsLoading
+        isLoading, setIsLoading,
+        state, dispatct
     }
 
     return <MovieContext.Provider value={values}>

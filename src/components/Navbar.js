@@ -5,7 +5,7 @@ import MovieContext from "../context/MovieContext";
 
 const Navbar = () => {
 
-  const {search,setSearch,setMainURL,setPage,setActivePage,lang} = useContext(MovieContext);
+  const {search,setSearch,setMainURL,setPage,setActivePage,lang,state, dispatct} = useContext(MovieContext);
 
   const navigate = useNavigate();
 
@@ -95,6 +95,8 @@ const Navbar = () => {
             <input
               onChange={onChangeInput} value={search}
               className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+              //test 
+              {state.testRedus}
             {/* <button  
               onClick={() => navigate("/")}
               className="btn btn-outline-success" type="submit">
