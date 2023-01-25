@@ -6,7 +6,7 @@ import styles from './styles.module.css';
 
 const Header = () => {
 
-  const {activePage,isLoading,setIsLoading,state, dispatch} = useContext(MovieContext);
+  const {isLoading,setIsLoading,state, dispatch} = useContext(MovieContext);
 
   useEffect(() => {
     fetch(`${state.mainURL}${state.page}`)

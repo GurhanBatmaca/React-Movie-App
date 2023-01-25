@@ -3,7 +3,7 @@ import {  useContext } from "react";
 
 import MovieContext from "../context/MovieContext";
 
-// serch sonrası navigate ayarla
+// movie sonrası navigate ayarla
 
 const Navbar = () => {
 
@@ -16,8 +16,9 @@ const Navbar = () => {
     if(state.search === "") {
       return;
     }
-    dispatch({type: "CHANGE_URL", mainURL: `https://api.themoviedb.org/3/search/multi?api_key=ad9a7b0c1f07914b7f151c86d435af36&language=en-US&query=${state.search}&page=`})
     navigate("/");
+    dispatch({type: "CHANGE_URL", mainURL: `https://api.themoviedb.org/3/search/multi?api_key=ad9a7b0c1f07914b7f151c86d435af36&language=en-US&query=${state.search}&page=`})
+
   };
 
   return (
