@@ -3,49 +3,21 @@ import {  useContext } from "react";
 
 import MovieContext from "../context/MovieContext";
 
+// serch sonrası navigate ayarla
+
 const Navbar = () => {
 
-  const {search,setSearch,setMainURL,setPage,setActivePage,lang,state, dispatct} = useContext(MovieContext);
+  const { state, dispatch } = useContext(MovieContext);
 
   const navigate = useNavigate();
 
-  const onChangeInput = (e) => {
-      setSearch(e.target.value);
-  };
-  
   const onSubmitForm = (e) => {
     e.preventDefault();
-    if(search === "") {
+    if(state.search === "") {
       return;
     }
-    setMainURL(`https://api.themoviedb.org/3/search/multi?api_key=ad9a7b0c1f07914b7f151c86d435af36&language=en-US&query=${search}&page=`);
-    setSearch("");
+    dispatch({type: "CHANGE_URL", mainURL: `https://api.themoviedb.org/3/search/multi?api_key=ad9a7b0c1f07914b7f151c86d435af36&language=en-US&query=${state.search}&page=`})
     navigate("/");
-  };
-
-  const onMovieChange = (e) => {
-    if(e === 1) {
-      setPage(1);
-      setMainURL(`https://api.themoviedb.org/3/movie/now_playing?api_key=ad9a7b0c1f07914b7f151c86d435af36&language=en-US&page=`);  
-      setActivePage("NOW PLAYİNG MOVİES");  
-      navigate("/");
-    } else if ( e === 2) {
-      setPage(1);
-      setMainURL(`https://api.themoviedb.org/3/movie/popular?api_key=ad9a7b0c1f07914b7f151c86d435af36&language=en-US&page=`);
-      setActivePage("POPULAR MOVIES MOVİES");  
-      navigate("/");
-    } else if ( e === 3) {
-      setPage(1);
-      setMainURL(`https://api.themoviedb.org/3/movie/top_rated?api_key=ad9a7b0c1f07914b7f151c86d435af36&language=en-US&page=`);
-      setActivePage("TOP RATED MOVİES"); 
-      navigate("/");
-
-    } else  {
-      setPage(1);
-      setMainURL(`https://api.themoviedb.org/3/movie/upcoming?api_key=ad9a7b0c1f07914b7f151c86d435af36&language=en-US&page=`);
-      setActivePage("UP COMİNG MOVİES"); 
-      navigate("/");
-    }  
   };
 
   return (
@@ -58,16 +30,16 @@ const Navbar = () => {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <button onClick={()=> {onMovieChange(1)}} className="nav-link btn btn-outline">NOW PLAYİNG</button>
+              <button onClick={()=> {dispatch({type: "NOW_PLAYİNG_MOVİES"})} } className="nav-link btn btn-outline">NOW PLAYİNG</button>
+            </li>
+            <li className="nav-item"> 
+              <button onClick={()=> {dispatch({type: "POPULAR_MOVIES"})} } className="nav-link btn btn-outline">POPULAR</button>
             </li>
             <li className="nav-item">
-              <button onClick={()=> {onMovieChange(2)}} className="nav-link btn btn-outline">POPULAR</button>
+              <button onClick={()=> {dispatch({type: "TOP_RATED_MOVİES"})} } className="nav-link btn btn-outline">TOP RATED</button>
             </li>
             <li className="nav-item">
-              <button onClick={()=> {onMovieChange(3)}} className="nav-link btn btn-outline">TOP RATED</button>
-            </li>
-            <li className="nav-item">
-              <button onClick={()=> {onMovieChange(4)}} className="nav-link btn btn-outline">UP COMİNG</button>
+              <button onClick={()=> {dispatch({type: "UP_COMİNG_MOVİES"})} } className="nav-link btn btn-outline">UP COMİNG</button>
             </li>
             <li className="nav-item dropdown">
               <a disabled className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -93,12 +65,12 @@ const Navbar = () => {
         </div> */}
           <form onSubmit={onSubmitForm} className="d-flex" role="search">
             <input
-              onChange={onChangeInput} value={search}
+              onChange={(e) => {dispatch({type: "SEARCH_MOVİE", search: e.target.value})}} value={state.search}
               className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-              //test 
+              {/* //test 
               {state.testRedus}
               {state.name}
-              <button onClick={() => {dispatct({type:"change", name: "nahrug"})}}>değiştir</button>
+              <button onClick={() => {dispatct({type:"change", name: "nahrug"})}}>değiştir</button> */}
             {/* <button  
               onClick={() => navigate("/")}
               className="btn btn-outline-success" type="submit">

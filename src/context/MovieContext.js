@@ -6,11 +6,14 @@ const MovieContext = createContext();
 export const MovieProvider = ({children}) => {
 
     const initinalState = {
-        testRedus: "olumlu",
-        name: "gürhan"
+        movies: [],
+        page: 1,
+        mainURL: `https://api.themoviedb.org/3/movie/now_playing?api_key=ad9a7b0c1f07914b7f151c86d435af36&language=en-US&page=`,
+        activePage: "NOW PLAYİNG MOVİES",
+        search:""
     }
 
-    const [state, dispatct] = useReducer(ReduserFn,initinalState);
+    const [state, dispatch] = useReducer(ReduserFn,initinalState);
 
     const [movies, setMovies] = useState([]);
     const [movie ,setMovie] = useState({});
@@ -30,7 +33,7 @@ export const MovieProvider = ({children}) => {
         mainURL, setMainURL,
         activePage, setActivePage,
         isLoading, setIsLoading,
-        state, dispatct
+        state, dispatch
     }
 
     return <MovieContext.Provider value={values}>
