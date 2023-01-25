@@ -97,6 +97,8 @@ const Navbar = () => {
               className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
               //test 
               {state.testRedus}
+              {state.name}
+              <button onClick={() => {dispatct({type:"change", name: "nahrug"})}}>değiştir</button>
             {/* <button  
               onClick={() => navigate("/")}
               className="btn btn-outline-success" type="submit">

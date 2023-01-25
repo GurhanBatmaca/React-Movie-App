@@ -6,7 +6,8 @@ const MovieContext = createContext();
 export const MovieProvider = ({children}) => {
 
     const initinalState = {
-        testRedus: "olumlu"
+        testRedus: "olumlu",
+        name: "gürhan"
     }
 
     const [state, dispatct] = useReducer(ReduserFn,initinalState);
