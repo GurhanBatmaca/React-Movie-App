@@ -58,7 +58,9 @@ export const ReduserFn = (state, action) => {
             return {
                 ...state,
                 search: action.search
-            }             
+            }   
+        default: 
+        return state              
     }
 
 }
