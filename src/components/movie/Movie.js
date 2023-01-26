@@ -1,6 +1,7 @@
 import { useEffect, useContext } from 'react';
 import { useParams } from 'react-router-dom';
 import MovieContext from "../../context/MovieContext";
+import styles from './styles.module.css';
 
 const Movie = () => {
 
@@ -17,7 +18,7 @@ const Movie = () => {
     },[id]);
 
   return (
-    <div className={`card {styles.my_card}`}>
+    <div className={`card ${styles.my_card}`}>
     <img src={`https://image.tmdb.org/t/p/original${state.movie.poster_path}`} className="card-img-top" alt={`${state.movie.title} poster`}/>
     <div className={`card-body {styles.my_card_body}`}>
         <h5 className="card-title">{state.movie.title}</h5>
