@@ -1,8 +1,28 @@
 .my_card {
-    height: 100vh;
-    width: auto;
+    background-color: var(--first-color);
+    background-image: var(--bg-linear-gradient);
+    border: none;
+    padding-top: 4rem;
 }
 
-.my_card img {
+.my_card_img {
     height: 80%;
+    padding-top: 1rem;
+}
+
+.my_card_img img {
+    width: 100%; 
+    height: 40rem;
+    object-fit: fill;
+    box-shadow: 4px -5px 5px 0px rgb(0 0 0 / 75%);
+}
+
+.my_card_body .my_card_title {
+    font-size: 1.5rem;
+    border-bottom: 1px solid black;
+}
+
+.my_card_body .my_card_overview {
+    font-size: 1.1rem;
+    /* border-bottom: 1px solid black; */
 }
