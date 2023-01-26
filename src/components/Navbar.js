@@ -1,9 +1,7 @@
 import { NavLink, useNavigate } from "react-router-dom"; 
-import {  useContext } from "react";
+import {  useContext, useEffect } from "react";
 
 import MovieContext from "../context/MovieContext";
-
-// movie sonrası navigate ayarla
 
 const Navbar = () => {
 
@@ -17,9 +15,16 @@ const Navbar = () => {
       return;
     }
     navigate("/");
-    dispatch({type: "CHANGE_URL", mainURL: `https://api.themoviedb.org/3/search/multi?api_key=ad9a7b0c1f07914b7f151c86d435af36&language=en-US&query=${state.search}&page=`})
+    dispatch({
+      type: "CHANGE_URL", 
+      mainURL: `https://api.themoviedb.org/3/search/multi?api_key=ad9a7b0c1f07914b7f151c86d435af36&language=en-US&query=${state.search}&page=`
+    })
 
   };
+
+  useEffect(() => {
+    navigate("/");
+  }, [state.mainURL]);
 
   return (
     <nav className="navbar navbar-expand-lg fixed-top container py-3">
@@ -68,15 +73,6 @@ const Navbar = () => {
             <input
               onChange={(e) => {dispatch({type: "SEARCH_MOVİE", search: e.target.value})}} value={state.search}
               className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-              {/* //test 
-              {state.testRedus}
-              {state.name}
-              <button onClick={() => {dispatct({type:"change", name: "nahrug"})}}>değiştir</button> */}
-            {/* <button  
-              onClick={() => navigate("/")}
-              className="btn btn-outline-success" type="submit">
-              Search
-            </button> */}
           </form>
         </div>
       </div>

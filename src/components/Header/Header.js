@@ -3,17 +3,15 @@ import MovieContext from "../../context/MovieContext";
 import { NavLink } from "react-router-dom";
 import styles from './styles.module.css';
 
-
 const Header = () => {
 
-  const {isLoading,setIsLoading,state, dispatch} = useContext(MovieContext);
+  const {state, dispatch} = useContext(MovieContext);
 
   useEffect(() => {
     fetch(`${state.mainURL}${state.page}`)
       .then(res => res.json())
       .then((data) => {
         dispatch({type:"ADD_MOVİES", movies: data.results})
-        setIsLoading(false);
       })
   }, [state.page,state.mainURL]);
 
@@ -21,7 +19,8 @@ const Header = () => {
   return (
     <header className="container">  
         <h2 className="text-center py-2">{state.activePage}</h2>  
-        { isLoading && <h2 className="text-center p-3"><i className="fa-solid fa-spinner"></i>  Loading...</h2> }
+        { state.isLoading && <h2 className="text-center p-3"><i className="fa-solid fa-spinner"></i>  Loading...</h2> }
+
         <ul className="row">
         { 
             state.movies.map((movie) => (

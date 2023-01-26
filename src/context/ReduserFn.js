@@ -4,7 +4,15 @@ export const ReduserFn = (state, action) => {
         case "ADD_MOVİES" :
             return {
                 ...state,
-                movies: action.movies } 
+                movies: action.movies,
+                isLoading: false
+            } 
+        case "ADD_MOVİE" :
+            return {
+                ...state,
+                movie: action.movie,
+                isLoading: false
+            }     
         case "CHANGE_URL" :
             return {
                 ...state,
@@ -59,6 +67,11 @@ export const ReduserFn = (state, action) => {
                 ...state,
                 search: action.search
             }   
+        case "LOADİNG" :
+            return {
+                ...state,
+                isLoading: state.isLoading
+            }  
         default: 
         return state              
     }
