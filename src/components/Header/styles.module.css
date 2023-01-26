@@ -14,23 +14,27 @@ header {
     transition: all .7s ease;
     text-shadow: 1px 1px 8px white;
     box-shadow: 4px -5px 5px 0px rgba(0,0,0,0.75);
+    overflow: hidden;
 }
 
 .my_card_link:hover {
-    transform: scale(1.1);
-    z-index: 1000;
     background-color: var(--first-color); 
-    border: 2px solid red;
+    border: 0.5px solid red;
     box-shadow: none;
-}
-
-.my_card_link:hover .my_card_body {
-    color: white;
-    text-shadow: 1px 1px 3px black;
 }
 
 .my_card_link img {
     height: 40rem;
+    width: 100%;
+    transition: all .7s ease;
+}
+
+.my_card_img {
+    overflow: hidden;
+}
+
+.my_card_link:hover img {
+    transform: scale(1.1);
 }
 
 .my_card_link .my_card_body {
@@ -62,6 +66,14 @@ header {
 .pages {
     font-size: 1.25rem;
     color: #58287F;
+}
+
+.active_page {
+    animation: animate__fadeInDown; /* referring directly to the animation's @keyframe declaration */
+    animation-duration: 2s; /* don't forget to set a duration! */
+    
+
+    
 }
 
 @media (max-width: 560px) {

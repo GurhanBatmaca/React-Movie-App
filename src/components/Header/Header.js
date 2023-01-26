@@ -2,6 +2,8 @@ import { useEffect, useContext } from "react";
 import MovieContext from "../../context/MovieContext";
 import { NavLink } from "react-router-dom";
 import styles from './styles.module.css';
+import 'animate.css';
+
 
 const Header = () => {
 
@@ -17,8 +19,8 @@ const Header = () => {
 
 
   return (
-    <header className="container">  
-        <h2 className="text-center py-2">{state.activePage}</h2>  
+    <header className="container-lg">  
+        <h2 className={`text-center py-2 ${styles.active_page}`}>{state.activePage}</h2>  
         { state.isLoading && <h2 className="text-center p-3"><i className="fa-solid fa-spinner"></i>  Loading...</h2> }
 
         <ul className="row">
@@ -26,7 +28,9 @@ const Header = () => {
             state.movies.map((movie) => (
                 <li key={movie.id} className={`card col-lg-4 col-md-6 ${styles.my_card}`}>
                     <NavLink to={`/movie/${movie.id}`} className={`${styles.my_card_link}`} >
-                        <img src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} className="card-img-top" alt={`${movie.title} poster`}/>
+                        <div className={`card-img-top ${styles.my_card_img}`}>
+                          <img src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} alt={`${movie.title} poster`}/>
+                        </div>
                         <div className={`card-body ${styles.my_card_body}  ${styles.text_color}`}>
                             <h5 className={`card-title ${styles.my_card_title}`}>{movie.title}</h5>
                             <p className={`card-text ${styles.line_clamp}`}>{movie.overview}</p>

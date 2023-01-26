@@ -25,7 +25,7 @@ const Movie = () => {
       <div className={`card-body px-md-5 ${styles.my_card_body}`}>
           <h5 className={`card-title ${styles.my_card_title}`}>{state.movie.title}</h5>
           <p className={`card-text ${styles.my_card_overview}`}>{state.movie.overview}</p>
-          <p className={`card-text`}>Rating: {state.movie.vote_average.toFixed(1)}</p>
+          <p className={`card-text`}>Rating: {state.movie.vote_average}</p>
       </div>
   </div>
   )

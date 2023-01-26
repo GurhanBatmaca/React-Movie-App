@@ -5,6 +5,7 @@ import { MovieProvider } from "./context/MovieContext";
 import Navbar from "./components/Navbar";
 import Header from "./components/Header/Header";
 import Movie from "./components/movie/Movie";
+import 'animate.css';
 
 
 function App() {
