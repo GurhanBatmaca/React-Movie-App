@@ -2,8 +2,6 @@ import { useEffect, useContext } from "react";
 import MovieContext from "../../context/MovieContext";
 import { NavLink } from "react-router-dom";
 import styles from './styles.module.css';
-import 'animate.css';
-
 
 const Header = () => {
 
@@ -20,7 +18,9 @@ const Header = () => {
 
   return (
     <header className="container-lg">  
-        <h2 className={`text-center py-2 ${styles.active_page}`}>{state.activePage}</h2>  
+        <div>
+          <h2 className={`text-center py-2 text-focus-in`}>{state.activePage}</h2>  
+        </div>
         { state.isLoading && <h2 className="text-center p-3"><i className="fa-solid fa-spinner"></i>  Loading...</h2> }
 
         <ul className="row">

@@ -12,7 +12,7 @@ header {
     border-radius: 7px;
     margin-bottom: 1rem;
     transition: all .7s ease;
-    text-shadow: 1px 1px 8px white;
+    /* text-shadow: 1px 1px 8px white; */
     box-shadow: 4px -5px 5px 0px rgba(0,0,0,0.75);
     overflow: hidden;
 }
@@ -40,6 +40,7 @@ header {
 .my_card_link .my_card_body {
     height: 18rem;
     font-size: 1rem;
+    background-color: #1A0000;
 }
 
 .my_card_link .line_clamp {
@@ -50,7 +51,7 @@ header {
 }
 
 .my_card_link .text_color {
-    color: #1A0000;
+    color: white;
 }
 
 .my_card_link .raiting {
@@ -66,14 +67,6 @@ header {
 .pages {
     font-size: 1.25rem;
     color: #58287F;
-}
-
-.active_page {
-    animation: animate__fadeInDown; /* referring directly to the animation's @keyframe declaration */
-    animation-duration: 2s; /* don't forget to set a duration! */
-    
-
-    
 }
 
 @media (max-width: 560px) {
