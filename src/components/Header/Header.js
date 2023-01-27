@@ -35,7 +35,7 @@ const Header = () => {
                             <h5 className={`card-title ${styles.my_card_title}`}>{movie.title}</h5>
                             <p className={`card-text ${styles.line_clamp}`}>{movie.overview}</p>
                             <p className={`card-text`}><span className="me-2">Details..</span><i className="fa-solid fa-location-arrow"></i></p>
-                            <p className="card-text">Rating: <span className={`${styles.raiting}`}>{movie.vote_average}</span></p>
+                            <p className={`card-text ${styles.rating}`}><i className="fa-solid fa-star fa-2x"></i> <span className={`${styles.raiting}`}>{movie.vote_average}</span></p>
                         </div>
                     </NavLink>
                 </li>

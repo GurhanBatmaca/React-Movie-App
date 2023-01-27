@@ -8,8 +8,9 @@
 
 .my_card_body {
     background-color: black;
-    height: 90vh;
+    min-height: 100vh;
     box-shadow: 4px -5px 5px 0px rgb(0 0 0 / 75%);
+    color: #FF4D00;
 
 }
 
@@ -19,16 +20,29 @@
 
 .my_card_img img {
     width: 100%; 
-    height: 90vh;
-    /* object-fit: fill; */
+    height: 100vh;
+    object-fit: fill;
     box-shadow: 4px -5px 5px 0px rgb(0 0 0 / 75%);
 }
 
 .my_card_body .my_card_title {
-    font-size: 1.5rem;
+    letter-spacing: 0.1rem;
+    font-size: 1.8rem;
     border-bottom: 1px solid black;
 }
 
 .my_card_body .my_card_overview {
-    font-size: 1.1rem;
+    font-size: 1.3rem;
+    letter-spacing: 0.1rem;
 } 
+
+.my_card_body .my_card_tagline {
+    font-size: 1.8rem;
+    letter-spacing: 0.1rem;
+    font-family: 'Dancing Script', cursive;
+}
+
+.my_card_body .footer {
+    display: flex;
+    justify-content: space-between;
+}
