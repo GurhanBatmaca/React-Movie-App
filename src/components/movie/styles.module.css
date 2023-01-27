@@ -14,9 +14,9 @@
 
 }
 
-.my_card_down {
+/* .my_card_down {
 
-}
+} */
 
 .my_card_img img {
     width: 100%; 
@@ -46,3 +46,5 @@
     display: flex;
     justify-content: space-between;
 }
+
+/* card footer düzenle */

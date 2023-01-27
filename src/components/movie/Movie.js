@@ -42,6 +42,7 @@ const Movie = () => {
               <div className={`${styles.footer} p-3`}>
                 <p className={`card-text`}><i className="fa-solid fa-star fa-2x"></i> {rate.toFixed(1)}</p>
                 <p className={`card-text`}><i className="fa-solid fa-calendar-days"></i> {state.movie.release_date}</p>
+                {/* <i className="fa-solid fa-ranking-star"></i> */}
               </div>
           </div>
         </div>
