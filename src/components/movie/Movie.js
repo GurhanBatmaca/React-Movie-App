@@ -18,14 +18,18 @@ const Movie = () => {
     },[id]);
 
   return (
-    <div className={`card ${styles.my_card} container`}>
-      <div className={`card-img-top ${styles.my_card_img} px-md-5`}>
-        <img src={`https://image.tmdb.org/t/p/original${state.movie.poster_path}`}  alt={`${state.movie.title} poster`}/>
-      </div>
-      <div className={`card-body px-md-5 ${styles.my_card_body}`}>
-          <h5 className={`card-title ${styles.my_card_title}`}>{state.movie.title}</h5>
-          <p className={`card-text ${styles.my_card_overview}`}>{state.movie.overview}</p>
-          <p className={`card-text`}>Rating: {state.movie.vote_average}</p>
+    <div className={`card ${styles.my_card}`}>
+      <div className='row'>
+        <div className={`img-fluid rounded-start ${styles.my_card_img} col-md-6`}>
+          <img src={`https://image.tmdb.org/t/p/original${state.movie.poster_path}`}  alt={`${state.movie.title} poster`}/>
+        </div>
+        <div className={`col-md-6 ${styles.my_card_down} `}>
+          <div className={`card-body ${styles.my_card_body} `}>
+              <h5 className={`card-title text-center ${styles.my_card_title}`}>{state.movie.title}</h5>
+              <p className={`card-text ${styles.my_card_overview}`}>{state.movie.overview}</p>
+              <p className={`card-text`}>Rating: {state.movie.vote_average}</p>
+          </div>
+        </div>
       </div>
   </div>
   )

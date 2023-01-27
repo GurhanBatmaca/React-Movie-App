@@ -34,7 +34,7 @@ const Header = () => {
                         <div className={`card-body ${styles.my_card_body}  ${styles.text_color}`}>
                             <h5 className={`card-title ${styles.my_card_title}`}>{movie.title}</h5>
                             <p className={`card-text ${styles.line_clamp}`}>{movie.overview}</p>
-                            <p className={`card-text`}><span className="me-2">Detail..</span><i className="fa-solid fa-location-arrow"></i></p>
+                            <p className={`card-text`}><span className="me-2">Details..</span><i className="fa-solid fa-location-arrow"></i></p>
                             <p className="card-text">Rating: <span className={`${styles.raiting}`}>{movie.vote_average}</span></p>
                         </div>
                     </NavLink>
