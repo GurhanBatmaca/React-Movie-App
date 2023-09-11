@@ -1,4 +1,4 @@
-# React Movie App || wiht TMDB api
+# React Movie App || with TMDB api
 
 [Demo](https://react-movies-shows-app.netlify.app/)  
 
